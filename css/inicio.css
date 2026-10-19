@@ -1,0 +1,175 @@
+
+:root {
+    --fundo: #9fb8a2;
+    --card: #0d5a24;
+    --borda: #b7cdb9;
+    --texto: #0e3116;
+    --suave: #000000;
+    --destaque: #3e16a1;
+    --destaque-suave: rgba(60, 19, 156, 0.678);
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+.cima {
+    background-color: #A8D5E3;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 2rem;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid var(--borda);
+}
+
+.menu a {
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    text-decoration: none;
+}
+
+.secao {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.secao h2 {
+    text-align: center;
+}
+
+.formacao-card {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid #e8d6c5;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.formacao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.formacao-info {
+    text-align: center;
+}
+
+.formacao-info a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.formacao-info h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: #f9fcf9;
+}
+
+.formacao-info p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.cardin {
+    margin-top: 10px;
+    padding: 12px 30px;
+    background: #fc7f18;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.cardin p {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.formacao-info a:hover .cardin {
+    background: #d86d15;
+}
+
+.cardOfertas {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid #e8d6c5;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-tema {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--borda);
+    background: var(--card);
+    color: var(--texto);
+    cursor: pointer;
+    transition: border-color 0.2s;
+    color:#f8f8f8
+}
+
+.btn-tema:before {
+    content: "☾";
+    font-size: 1.1rem;
+}
+
+.btn-tema:hover {
+    border-color: var(--destaque);
+}
+
+
+
+/*foooter*/
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 78px;
+    background-color: #f8f8f8;
+    color: #254b20;
+}
+
+.rodape p {
+    margin: 5px 0;
+}
