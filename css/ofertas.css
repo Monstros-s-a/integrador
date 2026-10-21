@@ -1,69 +1,159 @@
-body {
+
+:root {
+    --fundo: #afceb3;
+    --cabecalho: #0d5a24;
+    --card: #0d5a24;
+    --botao: #06580d;
+    --rodape: #0d5a24;
+    --destaque: #eeecea;
+    --texto: #ffffff;
+}
+
+/* Configuração geral */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     background: var(--fundo);
-    color: var(--texto);
+    color: #085c1b;
     line-height: 1.6;
 }
 
+/* Cabeçalho */
 .cima {
-    background-color: #dcebd8;
+    background: var(--cabecalho);
+    border-bottom: 3px solid var(--destaque);
 }
 
 .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 2rem;
-    background-color: #f8f8f8;
-    border-bottom: 2px solid #c5d8bd;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 16px 5%;
 }
 
 .menu h1 {
-    color: #254b20;
+    color: #ffffff;
     font-size: 1.8rem;
 }
 
 .menu a {
-    font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #254b20;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .menu a:hover {
-    color: #6b9b51;
+    color: var(--destaque);
 }
 
+/* Botão de tema */
+.btn-tema {
+    background: var(--botao);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-tema:hover {
+    background: var(--destaque);
+    transform: scale(1.05);
+}
+
+/* Catálogo */
 .secao-comidas {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
 .secao-comidas > h1 {
     grid-column: 1 / -1;
-    margin-bottom: 5px;
-    color: #ffffff;
-    font-size: 2rem;
     text-align: center;
+    color: #0d5a24;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
+/* Cartões dos produtos */
 .comidas-item {
-    background-color: #ffffff;
-    border: 2px solid #c5d8bd;
+    background: var(--card);
+    color: var(--texto);
+    border: 2px solid #8bbd91;
     border-radius: 14px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(37, 75, 32, 0.1);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .comidas-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(37, 75)
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
 }
+
+.comidas-info h2 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.comidas-info p {
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.comidas-info span {
+    display: inline-block;
+    background: #ffffff;
+    color: #0d5a24;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* imagens do produtoo */
+.comidas-info img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px auto 0;
+}
+
+
+.rodape {
+    background: var(--rodape);
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 40px;
+}
+
+.rodape p {
+    margin: 5px 0;
+}
+
