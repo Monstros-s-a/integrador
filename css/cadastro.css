@@ -165,6 +165,52 @@ body {
     outline-offset: 3px;
 }
 
+/* TEMA ESCURO */
+body.modo-escuro {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+.modo-escuro .cima,
+.modo-escuro .cadastro {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    border-color: #444;
+}
+
+.modo-escuro .menu a {
+    color: #f1f1f1;
+}
+
+.modo-escuro .menu h1,
+.modo-escuro .cadastro > h1 {
+    color: #81c995;
+}
+
+.modo-escuro .estabelecimento,
+.modo-escuro .alimento,
+.modo-escuro .quantidade,
+.modo-escuro .vlaidade,
+.modo-escuro .contato {
+    background-color: #292929;
+    border-color: #444;
+}
+
+.modo-escuro .cadastro h2 {
+    color: #9bd4a9;
+}
+
+.modo-escuro .cadastro input {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+.modo-escuro .rodape {
+    background-color: #1e1e1e;
+    color: #ddd;
+}
+
 /* RODAPÉ */
 .rodape {
     background-color: #e3eee4;
