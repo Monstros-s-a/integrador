@@ -1,8 +1,176 @@
-:root {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6f2;
+    color: #243b2a;
+}
+
+/* CABEÇALHO */
+.cima {
+    background-color: #ffffff;
+    padding: 18px 5%;
+    border-bottom: 1px solid #dce5dc;
 }
 
 .menu {
     display: flex;
-    
+    align-items: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.menu h1 {
+    color: #267447;
+    margin-right: auto;
+    font-size: 28px;
+}
+
+.menu a {
+    color: #26382b;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.menu a:hover {
+    color: #267447;
+}
+
+.btn-tema {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.img-tema {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* ÁREA PRINCIPAL */
+.cadastro {
+    max-width: 750px;
+    width: 90%;
+    margin: 45px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #dce5dc;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(30, 70, 40, 0.07);
+}
+
+.cadastro > h1 {
+    color: #267447;
+    font-size: 28px;
+    margin-bottom: 28px;
+}
+
+/* SEÇÕES DOS CAMPOS */
+.estabelecimento,
+.alimento,
+.quantidade,
+.vlaidade,
+.contato {
+    margin-bottom: 22px;
+    padding: 18px;
+    background-color: #f7faf7;
+    border: 1px solid #e0e9e0;
+    border-radius: 10px;
+}
+
+.cadastro h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #315c3b;
+}
+
+/* CAMPOS DE PREENCHIMENTO */
+.cadastro input {
+    width: 100%;
+    padding: 13px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #243b2a;
+    background-color: #ffffff;
+    border: 1px solid #cbd8cc;
+    border-radius: 7px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cadastro input:focus {
+    border-color: #398653;
+    box-shadow: 0 0 0 3px rgba(57, 134, 83, 0.12);
+}
+
+.cadastro input::placeholder {
+    color: #929c93;
+}
+
+.cadastro button[type="submit"] {
+    width: 100%;
+    padding: 14px 20px;
+
+    background-color: #287548;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: background-color 0.3s,
+                transform 0.2s,
+                box-shadow 0.3s;
+}
+
+.publicar {
+    width: 100%;
+    padding: 15px 20px;
+
+    background-color: #287548;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.publicar:hover {
+    background-color: #1e5e38;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(40, 117, 72, 0.25);
+}
+
+.publicar:active {
+    transform: scale(0.98);
+}
+
+.publicar:focus-visible {
+    outline: 3px solid #91c9a2;
+    outline-offset: 3px;
+}
+
+/* RODAPÉ */
+.rodape {
+    background-color: #e3eee4;
+    color: #49604c;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 14px;
+    line-height: 1.8;
 }

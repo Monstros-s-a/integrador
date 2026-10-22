@@ -1,2 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Reaproveita</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+
+<body>
+
+    <header class="cima">
+        <nav class="menu">
+            <h1>Reaproveita</h1>
+            <a href="../index.html">Inicio</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="../index.html#Sobre">Sobre</a>
+            <a href="#suporte">Suporte</a>
+            <button id="btnTema" class="btn-tema">
+                <img id="iconeTema" src="../assets/lua svg.svg" alt="Alternar Tema" class="img-tema">
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cadastro">
+            <h1>Divulgar uma doação</h1>
+
+            <div class="estabelecimento">
+                <h2>Estabelecimento</h2>
+                <div>
+                    <form id="formestabelecimento">
+
+                        <input type="text" id="nome" required placeholder="Digite o Nome do Estabelecimento">
+                </div>
+            </div>
+
+            <div class="alimento">
+                <h2>Alimento</h2>
+                <div>
+                    <form id="formalimento">
+                        <input type="text" id="nome" required placeholder="Ex: Pao de forma">
+                </div>
+            </div>
+
+            <div class="quantidade">
+                <h2>Quantidade</h2>
+                <div>
+                    <form id="formquantidade">
+                        <input type="text" id="nome" required placeholder="Ex: 30 unidades">
+                </div>
+            </div>
+
+            <div class="vlaidade">
+                <h2>Validade</h2>
+                <div>
+                    <form id="formvalidade">
+                        <input type="text" id="nome" required placeholder="mm/dd/yyyy">
+                </div>
+            </div>
+
+            <div class="contato">
+                <h2>Contato</h2>
+                <div>
+                    <form id="formcontato">
+                        <input type="text" id="nome" required placeholder="WhatsApp ou e-mail">
+                </div>
+            </div>
+
+            <button class="publicar"> Publicar doação</button>
+
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Reaproveita: alimentos que transformam vidas.</p>
+        <p>© 2026 Reaproveita | Projeto Integrador</p>
+    </footer>
+
+    <script src="../javascript/script.js"></script>
+
+</body>
+
+</html>
