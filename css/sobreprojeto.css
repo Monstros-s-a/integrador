@@ -1,0 +1,27 @@
+@import url('../css/base.css');
+
+.titulo-pagina { padding: 36px 0 4px; }
+.titulo-pagina h2 { margin: 0; font-size: 30px; letter-spacing: -0.03em; color: var(--verde-escuro); }
+.titulo-pagina p { margin: 4px 0 0; color: var(--texto-suave); }
+
+.secao { padding: 48px 0 8px; }
+.secao > h2 { margin: 0 0 6px; font-size: 24px; letter-spacing: -0.03em; }
+.subtitulo { margin: 0 0 24px; color: var(--texto-suave); }
+
+.grade-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.grade-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+.caixa { background: var(--branco); border: 1px solid var(--borda); border-radius: 14px; padding: 24px; box-shadow: var(--sombra); transition: background 200ms, border-color 200ms; }
+.caixa h3 { margin: 0 0 8px; font-size: 17px; color: var(--verde-escuro); }
+.caixa p, .caixa li { color: var(--texto-suave); margin: 0; }
+.caixa ul { margin: 0; padding-left: 18px; }
+
+.tabela { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tabela th, .tabela td { padding: 10px 12px; border-bottom: 1px solid var(--borda); text-align: left; }
+.tabela th { color: var(--verde-escuro); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { padding: 5px 12px; border-radius: 99px; font-size: 13px; font-weight: 600; background: var(--verde-claro); color: var(--verde-escuro); }
+
+.equipe .pessoa { text-align: center; }
+.avatar { width: 60px; height: 60px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--verde-claro); color: var(--verde-escuro); font-size: 22px; font-weight: 800; }

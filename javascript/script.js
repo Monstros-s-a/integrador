@@ -3,6 +3,7 @@ const btnVoltar = document.getElementById('btnVoltar');
 const btnAvancar = document.getElementById('btnAvancar');
 const btnTema = document.getElementById('btnTema');
 const iconeTema = document.getElementById('iconeTema');
+const campoBusca = document.getElementById('campoBusca');
 
 let arrastando = false, inicioX, scrollInicial, tempo;
 
@@ -64,13 +65,32 @@ if (carrossel) {
 if (btnTema) {
   btnTema.addEventListener('click', () => {
     document.body.classList.toggle('modo-escuro');
-
+    
     if (iconeTema) {
+      const srcAtual = iconeTema.getAttribute('src');
+      const pasta = srcAtual.startsWith('../') ? '../img/' : 'img/';
+      
       if (document.body.classList.contains('modo-escuro')) {
-        iconeTema.setAttribute('src', '../assets/sol.svg');
+        iconeTema.setAttribute('src', pasta + 'lua.png');
       } else {
-        iconeTema.setAttribute('src', '../assets/lua svg.svg');
+        iconeTema.setAttribute('src', pasta + 'sol.png');
       }
     }
+  });
+}
+
+if (campoBusca) {
+  campoBusca.addEventListener('input', () => {
+    const termo = campoBusca.value.toLowerCase();
+    const cards = document.querySelectorAll('.comidas-item');
+
+    cards.forEach((card) => {
+      const texto = card.textContent.toLowerCase();
+      if (texto.includes(termo)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   });
 }

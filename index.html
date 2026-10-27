@@ -13,22 +13,23 @@
 <body>
 
   <header class="cima">
-
     <nav class="menu">
-
       <h1>Reaproveita</h1>
-      <a href="#inicio">Inicio</a>
 
-      <a href="html/ofertas.html">Ofertas</a>
+      <div class="caixa-busca">
+        <input type="text" id="campoBusca" placeholder="Buscar oferta..." class="pesquisa">
+      </div>
 
+      <a href="#guias">Início</a>
       <a href="#Sobre">Sobre</a>
-      <a href="html/cadastro.html">Cadastro</a>
+      <a href="html/ofertas.html">Ofertas</a>
+      <a href="html/cadastro.html">Doar</a>
+      <a href="html/sobreprojeto.html">Sobre o Projeto</a>
+
       <button id="btnTema" class="btn-tema">
-        <img id="iconeTema" src="../assets/lua svg.svg" alt="Alternar Tema" class="img-tema">
+        <img id="iconeTema" src="assets/lua svg.svg" alt="Alternar Tema" class="img-tema">
       </button>
-
     </nav>
-
   </header>
 
   <main>
@@ -50,12 +51,13 @@
 
       <div class="carrossel-container">
         <button id="btnVoltar" class="btn-carrossel">&#10094;</button>
-        
+
         <div class="cardOfertas" id="sliderOfertas">
 
           <div class="comidas-item">
             <div class="comidas-info">
-              <img src="../assets/360_F_105630896_juHF5aD5RMDinjacDCPWgnbR1yLCgklG.webp" alt="Enroladinho de Presunto e Queijo" class="comidas-foto">
+              <img src="../assets/360_F_105630896_juHF5aD5RMDinjacDCPWgnbR1yLCgklG.webp"
+                alt="Enroladinho de Presunto e Queijo" class="comidas-foto">
               <h2>Enroladinho de Presunto e Queijo</h2>
               <p>Quantidade: 10 unidades</p>
               <span>Retirar até as 18h</span>
@@ -73,7 +75,8 @@
 
           <div class="comidas-item">
             <div class="comidas-info">
-              <img src="../assets/Vvvl530dn0NRUcRizcvdFp7LNiB96g0C30eIQgoT.jpg" alt="Pastel de Queijo" class="comidas-foto">
+              <img src="../assets/Vvvl530dn0NRUcRizcvdFp7LNiB96g0C30eIQgoT.jpg" alt="Pastel de Queijo"
+                class="comidas-foto">
               <h2>Pastel de Queijo</h2>
               <p>Quantidade: 12 unidades</p>
               <span>Retirar até as 18h</span>
@@ -139,33 +142,71 @@
         <button id="btnAvancar" class="btn-carrossel">&#10095;</button>
       </div>
 
-      <section id="Sobre" class="sobre">
+      <section class="hero">
         <div>
-          <h1> Nossa Historia</h1>
-          <p>O Reaproveita nasceu da ideia de transformar o desperdício de alimentos em oportunidade para ajudar quem
-            precisa. Percebemos que muitos estabelecimentos possuem alimentos excedentes próprios para consumo, enquanto
-            diversas instituições sociais precisam de apoio para atender pessoas em situação de vulnerabilidade.<br>Por
-            isso, criamos uma plataforma que conecta esses estabelecimentos às instituições, facilitando a divulgação de
-            doações e o contato entre as partes. Nosso objetivo é incentivar o consumo responsável, reduzir o
-            desperdício
-            e contribuir para um futuro mais solidário e sustentável.
-
-            Acreditamos que pequenas atitudes podem gerar grandes mudanças. Reaproveita: alimentos que transformam
-            vidas.
-          </p>
+          <h2>Comida boa não precisa ir para o lixo.</h2>
+          <p>O Reaproveita conecta padarias, mercados e restaurantes que têm excedente de alimentos a pessoas e
+            instituições que precisam deles. Simples, rápido e gratuito.</p>
+          <div class="acoes">
+            <a class="btn btn-laranja" href="html/ofertas.html">Ver doações</a>
+            <a class="btn btn-claro" href="html/cadastro.html">Quero doar</a>
+          </div>
+        </div>
+        <div class="hero-numeros">
+          <div class="numero"><strong id="numDisponiveis">0</strong><span>unidades disponíveis agora</span></div>
+          <div class="numero"><strong id="numSalvas">0</strong><span>unidades já reservadas</span></div>
+          <div class="numero"><strong id="numLocais">0</strong><span>estabelecimentos parceiros</span></div>
         </div>
       </section>
 
-    </section>
+      <section class="secao">
+        <h2>Como funciona</h2>
+        <p class="subtitulo">Do cadastro à retirada em três passos.</p>
+        <div class="grade-3">
+          <div class="caixa"><span class="passo-num">1</span>
+            <h3>O estabelecimento publica</h3>
+            <p>Informa o alimento, a quantidade, a validade e o horário limite para retirada.</p>
+          </div>
+          <div class="caixa"><span class="passo-num">2</span>
+            <h3>O interessado reserva</h3>
+            <p>Escolhe a oferta, informa nome e contato e garante a quantidade desejada.</p>
+          </div>
+          <div class="caixa"><span class="passo-num">3</span>
+            <h3>A retirada acontece</h3>
+            <p>A pessoa retira o alimento no local dentro do prazo e nada é desperdiçado.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="Sobre" class="secao">
+        <h2>Por que isso importa</h2>
+        <p class="subtitulo">O desperdício de alimentos é um problema social, econômico e ambiental.</p>
+        <div class="grade-2">
+          <div class="caixa">
+            <h3>Social</h3>
+            <p>Enquanto parte da população enfrenta insegurança alimentar, alimentos em perfeito estado são descartados
+              diariamente por comércios.</p>
+          </div>
+          <div class="caixa">
+            <h3>Ambiental</h3>
+            <p>Alimentos descartados geram resíduos e emissão de gases em aterros. Reaproveitar reduz esse impacto.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Tem excedente no seu estabelecimento?</h2>
+        <p>Publique uma doação em menos de um minuto.</p>
+        <a class="btn" href="html/cadastro.html">Divulgar uma doação</a>
+      </section>
 
   </main>
 
   <footer id="suporte" class="rodape">
-    <p> Facilitamos o acesso ao conhecimento tecnologico, incentivando a inovação e o desenvolvimento de habilidades
-      digitais, em alinhamento com a ODS 9</p>
-
-    <p> @ 2026 Monstros S.A | Projeto Integrador Tec em Informatica para Internet | Todos os direitos reservados | Senac
-      Largo Treze. </p>
+    <p>Facilitamos o acesso ao conhecimento tecnológico, incentivando a inovação e o desenvolvimento de habilidades
+      digitais, em alinhamento com a ODS 9.</p>
+    <p>© 2026 Reaproveita | Projeto Integrador Tec em Informática para Internet | Todos os direitos reservados | Senac
+      Largo Treze.</p>
   </footer>
   <script src="javascript/script.js"></script>
 </body>
