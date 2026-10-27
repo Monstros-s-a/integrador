@@ -26,8 +26,13 @@ body.modo-escuro {
   --sombra: 0 8px 24px rgb(0 0 0 / 25%);
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -88,16 +93,23 @@ main {
   color: var(--verde);
 }
 
-.menu a.ativo::after,
-.menu a[href="#inicio"]::after,
-.menu a[href="ofertas.html"]::after {
+.menu a::after {
+  content: '';
   position: absolute;
-  right: 0;
-  bottom: 12px;
   left: 0;
+  bottom: 12px;
+  width: 100%;
   height: 2px;
   background: var(--verde);
-  content: '';
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+
+.menu a:hover::after,
+.menu a.ativo::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .caixa-busca {
@@ -106,7 +118,8 @@ main {
   margin-left: auto;
 }
 
-.pesquisa, .input-busca {
+.pesquisa,
+.input-busca {
   padding: 6px 14px;
   border: 1px solid var(--borda);
   border-radius: 20px;
@@ -117,7 +130,8 @@ main {
   transition: border-color 160ms ease, background 200ms ease, color 200ms ease;
 }
 
-.pesquisa:focus, .input-busca:focus {
+.pesquisa:focus,
+.input-busca:focus {
   border-color: var(--verde);
 }
 

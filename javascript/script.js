@@ -9,8 +9,7 @@ let arrastando = false, inicioX, scrollInicial, tempo;
 
 function mover(distancia) {
   if (!carrossel) return;
-  const tamanho = carrossel.clientWidth;
-  const fim = carrossel.scrollWidth - tamanho;
+  const fim = carrossel.scrollWidth - carrossel.clientWidth;
 
   if (distancia > 0 && carrossel.scrollLeft >= fim - 10) {
     carrossel.scrollTo({ left: 0, behavior: 'smooth' });
@@ -62,35 +61,41 @@ if (carrossel) {
   reiniciarTempo();
 }
 
+function trocarImagemTema(escuro) {
+  if (!iconeTema) return;
+  const src = iconeTema.getAttribute('src') || '';
+  const pasta = src.startsWith('../') ? '../assets/' : 'assets/';
+  iconeTema.src = pasta + (escuro ? 'sol.svg' : 'lua.svg');
+}
+
 if (btnTema) {
+  const temaSalvo = localStorage.getItem('tema') === 'escuro';
+  if (temaSalvo) {
+    document.body.classList.add('modo-escuro');
+  }
+  trocarImagemTema(temaSalvo);
+
   btnTema.addEventListener('click', () => {
-    document.body.classList.toggle('modo-escuro');
-    
-    if (iconeTema) {
-      const srcAtual = iconeTema.getAttribute('src');
-      const pasta = srcAtual.startsWith('../') ? '../img/' : 'img/';
-      
-      if (document.body.classList.contains('modo-escuro')) {
-        iconeTema.setAttribute('src', pasta + 'lua.png');
-      } else {
-        iconeTema.setAttribute('src', pasta + 'sol.png');
-      }
-    }
+    const escuro = document.body.classList.toggle('modo-escuro');
+    localStorage.setItem('tema', escuro ? 'escuro' : 'claro');
+    trocarImagemTema(escuro);
   });
 }
 
 if (campoBusca) {
   campoBusca.addEventListener('input', () => {
     const termo = campoBusca.value.toLowerCase();
-    const cards = document.querySelectorAll('.comidas-item');
-
-    cards.forEach((card) => {
-      const texto = card.textContent.toLowerCase();
-      if (texto.includes(termo)) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+    document.querySelectorAll('.comidas-item').forEach((card) => {
+      const achou = card.textContent.toLowerCase().includes(termo);
+      card.style.display = achou ? '' : 'none';
     });
   });
 }
+
+const caminho = window.location.pathname;
+document.querySelectorAll('.menu a').forEach((link) => {
+  const href = link.getAttribute('href');
+  if (href && href !== '#' && href !== '#inicio' && caminho.includes(href)) {
+    link.classList.add('ativo');
+  }
+});
