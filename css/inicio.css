@@ -1,33 +1,128 @@
 @import url('../css/base.css');
 
-/* CORES */
-:root {
-    color-scheme: light;
-    --fundo: #f7fcfa;
-    --branco: #ffffff;
-    --texto: #17251f;
-    --texto-suave: #6a7a72;
-    --verde: #58aa83;
-    --verde-escuro: #367c5c;
-    --verde-claro: #d9f0e5;
-    --laranja: #ff9b42;
-    --borda: #dce6e0;
-    --sombra: 0 8px 24px rgb(29 65 48 / 6%);
-}
-
 .secao {
     padding: 40px 0 64px;
 }
 
-.secao > h2:empty {
+.secao>h2:empty {
     display: none;
 }
 
-.secao > h1 {
+.secao>h1 {
     margin: 35px 0 16px;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: -0.02em;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 40px 0;
+    padding: 48px;
+    background: var(--verde);
+    color: #ffffff;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+.hero>div:first-child {
+    flex: 1.3;
+}
+
+.hero h2 {
+    max-width: 580px;
+    margin: 0 0 18px;
+    font-size: 38px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    max-width: 580px;
+    margin: 0 0 26px;
+    color: rgb(255 255 255 / 92%);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.hero .acoes {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.hero .btn:hover {
+    transform: translateY(-3px);
+}
+
+.hero .btn-laranja {
+    background: var(--laranja);
+    color: #302116;
+    border-color: var(--laranja);
+}
+
+.hero .btn-laranja:hover {
+    background: #ffad61;
+}
+
+.hero .btn-claro {
+    background: transparent;
+    color: #ffffff;
+    border-color: rgb(255 255 255 / 65%);
+}
+
+.hero .btn-claro:hover {
+    background: rgb(255 255 255 / 12%);
+}
+
+.hero-numeros {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hero .numero {
+    padding: 19px 22px;
+    background: rgb(255 255 255 / 15%);
+    border: 1px solid rgb(255 255 255 / 25%);
+    border-radius: 13px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.hero .numero:hover {
+    background: rgb(255 255 255 / 23%);
+    transform: translateX(4px);
+}
+
+.hero .numero strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero .numero span {
+    color: rgb(255 255 255 / 90%);
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 .formacao-card {
@@ -45,7 +140,7 @@
     width: 100%;
 }
 
-.formacao-info > a {
+.formacao-info>a {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -65,7 +160,7 @@
     letter-spacing: -0.035em;
 }
 
-.formacao-info > a > p {
+.formacao-info>a>p {
     flex: 1 1 35%;
     margin: 0 0 14px;
     color: rgb(255 255 255 / 90%);
@@ -83,7 +178,7 @@
     transition: background 160ms, transform 160ms;
 }
 
-.formacao-info > a:hover .cardin {
+.formacao-info>a:hover .cardin {
     transform: translateY(-2px);
     background: #ffad62;
 }
@@ -157,8 +252,7 @@
     border-radius: 12px;
     background: var(--branco);
     box-shadow: var(--sombra);
-    transition: border-color 160ms, transform 160ms,
-        background 200ms;
+    transition: border-color 160ms, transform 160ms, background 200ms;
     user-select: none;
 }
 
@@ -205,355 +299,6 @@
     font-size: 11px;
 }
 
-.sobre {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 60px;
-    padding: 34px;
-    border: 1px solid var(--borda);
-    border-radius: 16px;
-    background: var(--branco);
-    transition: background 200ms, border-color 200ms;
-}
-
-.sobre > * {
-    flex: 1 1 250px;
-}
-
-.sobre h1 {
-    margin: 0 0 12px;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-}
-
-.sobre p {
-    max-width: 100%;
-    margin: 0;
-    color: var(--texto-suave);
-    line-height: 1.8;
-}
-
-.tabela {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-}
-
-.tabela th,
-.tabela td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--borda);
-    text-align: left;
-}
-
-.tabela th {
-    color: var(--verde-escuro);
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tag {
-    padding: 5px 12px;
-    border-radius: 99px;
-    background: var(--verde-claro);
-    color: var(--verde-escuro);
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 10px;
-    border-radius: 50%;
-    background: var(--verde-claro);
-    color: var(--verde-escuro);
-    font-size: 22px;
-    font-weight: 800;  
-}
-
-.equipe .pessoa {
-    text-align: center;
-}
-
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-
-    margin: 40px 0;
-    padding: 48px;
-
-    background: var(--verde);
-    color: #ffffff;
-
-    border: 1px solid var(--borda);
-    border-radius: 20px;
-    box-shadow: var(--sombra);
-}
-
-.hero > div:first-child {
-    flex: 1.3;
-}
-
-.hero h2 {
-    max-width: 580px;
-    margin: 0 0 18px;
-
-    font-size: 38px;
-    line-height: 1.2;
-    letter-spacing: -1px;
-}
-
-.hero p {
-    max-width: 580px;
-    margin: 0 0 26px;
-
-    color: rgb(255 255 255 / 92%);
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-.hero .acoes {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.hero .btn {
-    display: inline-block;
-    padding: 13px 22px;
-
-    border-radius: 9px;
-    border: 1px solid transparent;
-
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-
-    transition: transform 0.2s, background 0.2s;
-}
-
-.hero .btn:hover {
-    transform: translateY(-3px);
-}
-
-.hero .btn-laranja {
-    background: var(--laranja);
-    color: #302116;
-    border-color: var(--laranja);
-}
-
-.hero .btn-laranja:hover {
-    background: #ffad61;
-}
-
-.hero .btn-claro {
-    background: transparent;
-    color: #ffffff;
-    border-color: rgb(255 255 255 / 65%);
-}
-
-.hero .btn-claro:hover {
-    background: rgb(255 255 255 / 12%);
-}
-
-.hero-numeros {
-    flex: 0.9;
-
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.hero .numero {
-    padding: 19px 22px;
-
-    background: rgb(255 255 255 / 15%);
-    border: 1px solid rgb(255 255 255 / 25%);
-    border-radius: 13px;
-
-    transition: background 0.2s, transform 0.2s;
-}
-
-.hero .numero:hover {
-    background: rgb(255 255 255 / 23%);
-    transform: translateX(4px);
-}
-
-.hero .numero strong {
-    display: block;
-    margin-bottom: 6px;
-
-    font-size: 32px;
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.hero .numero span {
-    color: rgb(255 255 255 / 90%);
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-body.modo-escuro .hero {
-    background: var(--branco);
-    color: var(--texto);
-    border-color: var(--borda);
-}
-
-body.modo-escuro .hero p,
-body.modo-escuro .hero .numero span {
-    color: var(--texto-suave);
-}
-
-body.modo-escuro .hero .numero {
-    background: var(--fundo);
-    border-color: var(--borda);
-}
-
-body.modo-escuro .hero .numero:hover {
-    background: var(--verde-claro);
-}
-
-body.modo-escuro .hero .btn-claro {
-    color: var(--texto);
-    border-color: var(--borda);
-}
-
-body.modo-escuro .hero .btn-claro:hover {
-    background: var(--verde-claro);
-}
-
-/* ===== HERO ===== */
-
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    margin: 40px 0;
-    padding: 48px;
-    background: var(--verde);
-    color: #ffffff;
-    border: 1px solid var(--borda);
-    border-radius: 20px;
-    box-shadow: var(--sombra);
-}
-
-.hero > div:first-child {
-    flex: 1.3;
-}
-
-.hero h2 {
-    max-width: 580px;
-    margin: 0 0 18px;
-    font-size: 38px;
-    line-height: 1.2;
-    letter-spacing: -1px;
-}
-
-.hero p {
-    max-width: 580px;
-    margin: 0 0 26px;
-    color: rgb(255 255 255 / 92%);
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-/* BOTÕES DO HERO */
-
-.hero .acoes {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.hero .btn {
-    display: inline-block;
-    padding: 13px 22px;
-    border: 1px solid transparent;
-    border-radius: 9px;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    transition: transform 0.2s, background 0.2s;
-}
-
-.hero .btn:hover {
-    transform: translateY(-3px);
-}
-
-.hero .btn-laranja {
-    background: var(--laranja);
-    color: #302116;
-    border-color: var(--laranja);
-}
-
-.hero .btn-laranja:hover {
-    background: #ffad61;
-}
-
-.hero .btn-claro {
-    background: transparent;
-    color: #ffffff;
-    border-color: rgb(255 255 255 / 65%);
-}
-
-.hero .btn-claro:hover {
-    background: rgb(255 255 255 / 12%);
-}
-
-/* NÚMEROS DO HERO */
-
-.hero-numeros {
-    flex: 0.9;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.hero .numero {
-    padding: 19px 22px;
-    background: rgb(255 255 255 / 15%);
-    border: 1px solid rgb(255 255 255 / 25%);
-    border-radius: 13px;
-    transition: background 0.2s, transform 0.2s;
-}
-
-.hero .numero:hover {
-    background: rgb(255 255 255 / 23%);
-    transform: translateX(4px);
-}
-
-.hero .numero strong {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 32px;
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.hero .numero span {
-    color: rgb(255 255 255 / 90%);
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-/* ===== COMO FUNCIONA ===== */
-
 .funci {
     margin: 50px 0;
     padding: 35px;
@@ -563,7 +308,7 @@ body.modo-escuro .hero .btn-claro:hover {
     box-shadow: var(--sombra);
 }
 
-.funci > h2 {
+.funci>h2 {
     margin-bottom: 10px;
     color: var(--texto);
     font-size: 30px;
@@ -618,8 +363,6 @@ body.modo-escuro .hero .btn-claro:hover {
     font-size: 14px;
     line-height: 1.7;
 }
-
-/* ===== SOBRE ===== */
 
 .sobre {
     margin: 50px 0;
@@ -677,8 +420,6 @@ body.modo-escuro .hero .btn-claro:hover {
     line-height: 1.7;
 }
 
-/* ===== MODO ESCURO ===== */
-
 body.modo-escuro .hero {
     background: var(--branco);
     color: var(--texto);
@@ -704,18 +445,12 @@ body.modo-escuro .hero .btn-claro {
     border-color: var(--borda);
 }
 
-body.modo-escuro .funci {
-    background: var(--branco);
-}
-
-body.modo-escuro .funci .caixa {
-    background: var(--fundo);
-}
-
+body.modo-escuro .funci,
 body.modo-escuro .sobre {
     background: var(--branco);
 }
 
+body.modo-escuro .funci .caixa,
 body.modo-escuro .sobre .caixa {
     background: var(--fundo);
 }

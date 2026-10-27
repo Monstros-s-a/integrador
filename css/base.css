@@ -168,3 +168,81 @@ main {
   border-top: 1px solid var(--borda);
   margin-top: 50px;
 }
+
+@media (max-width: 768px) {
+  main,
+  .menu,
+  .container-ofertas {
+    width: min(100% - 24px, 1120px);
+  }
+
+  .menu {
+    justify-content: space-between;
+    padding: 12px 0;
+    gap: 12px;
+  }
+
+  .menu h1 {
+    margin: 0;
+  }
+
+  .caixa-busca {
+    order: 3;
+    width: 100%;
+  }
+
+  .pesquisa, .input-busca {
+    width: 100%;
+  }
+
+  .container-ofertas {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .filtro-lateral {
+    position: static;
+    width: 100%;
+  }
+
+  .secao-comidas {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-2,
+  .grade-3,
+  .funci .grade-3,
+  .sobre .grade-2 {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .comidas-item {
+    flex: 0 0 85%;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .hero-numeros {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu a {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+
+  .comidas-item {
+    flex: 0 0 100%;
+  }
+}
