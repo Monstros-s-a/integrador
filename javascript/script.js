@@ -64,7 +64,7 @@ if (carrossel) {
 function trocarImagemTema(escuro) {
   if (!iconeTema) return;
   const src = iconeTema.getAttribute('src') || '';
-  const pasta = src.startsWith('../') ? '../assets/icons/' : 'assets/icons';
+  const pasta = src.startsWith('./') ? './assets/icons/' : 'assets/icons';
   iconeTema.src = pasta + (escuro ? 'sol.svg' : 'lua.svg');
 }
 
