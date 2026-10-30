@@ -78,12 +78,17 @@ body {
   margin: 0;
   background: var(--fundo);
   color: var(--texto);
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.6;
   transition:
     background 200ms ease,
     color 200ms ease;
+}
+
+button,
+input {
+  font-family: inherit;
 }
 
 main {
@@ -116,9 +121,10 @@ main {
 .menu h1 {
   margin: 0 auto 0 12px;
   color: var(--verde-escuro);
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-family: "Pacifico", "Poppins", cursive;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .menu a {
@@ -294,6 +300,7 @@ main {
 
 .hero h2 {
   font-size: 26px;
+  font-family: 'Pacifico.ttf';
 }
 
 .hero-numeros {
@@ -310,3 +317,9 @@ main {
     flex: 0 0 100%;
   }
 }
+  
+
+  .comidas-item {
+    flex: 0 0 100%;
+  }
+
