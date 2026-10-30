@@ -1,216 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-  
-<head>
+  <head>
+    <title>Reaproveita</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/inicio.css" />
+  </head>
 
-  <title>Reaproveita</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/inicio.css">
+  <body>
+    <header class="cima">
+      <nav class="menu">
+        <h1>Reaproveita</h1>
 
-</head>
-
-<body>
-
-  <header class="cima">
-    <nav class="menu">
-      <h1>Reaproveita</h1>
-
-      <div class="caixa-busca">
-        <input type="text" id="campoBusca" placeholder="Buscar oferta..." class="pesquisa">
-      </div>
-
-      <a href="#guias">Início</a>
-      <a href="#Sobre">Sobre</a>
-      <a href="html/ofertas.html">Ofertas</a>
-      <a href="html/cadastro.html">Doar</a>
-      <a href="html/sobreprojeto.html">Sobre o Projeto</a>
-
-      <button id="btnTema" class="btn-tema">
-        <img id="iconeTema" src="./assets/icons/lua.svg" alt="Alternar Tema" class="img-tema">
-      </button>
-    </nav>
-  </header>
-
-  <main>
-
-    <section id="guias" class="secao">
-
-      <div class="formacao-card">
-        <div class="formacao-info">
-          <a href="html/ofertas.html">
-            <h3>Alimentos que transformam vidas</h3>
-            <p> Conectamos quem tem alimento sobrando a quem precisa receber.</p>
-            <div class="cardin">
-              <p>Ver ofertas</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <h1> Ofertas Recentes</h1>
-
-      <div class="carrossel-container">
-        <button id="btnVoltar" class="btn-carrossel">&#10094;</button>
-
-        <div class="cardOfertas" id="sliderOfertas">
-
-          <div class="comidas-item">
-            <div class="comidas-info">
-              <img src="./assets/img/360_F_105630896_juHF5aD5RMDinjacDCPWgnbR1yLCgklG.webp"
-                alt="Enroladinho de Presunto e Queijo" class="comidas-foto">
-              <h2>Enroladinho de Presunto e Queijo</h2>
-              <p>Quantidade: 10 unidades</p>
-              <span>Retirar até as 18h</span>
-            </div>
-          </div>
-
-          <div class="comidas-item">
-            <div class="comidas-info">
-              <img src="./assets/img/images.jfif" alt="Coxinha" class="comidas-foto">
-              <h2>Coxinha</h2>
-              <p>Quantidade: 8 unidades</p>
-              <span>Retirar em até 2 horas</span>
-            </div>
-          </div>
-
-          <div class="comidas-item">
-            <div class="comidas-info">
-              <img src="./assets/img/Vvvl530dn0NRUcRizcvdFp7LNiB96g0C30eIQgoT.jpg" alt="Pastel de Queijo"
-                class="comidas-foto">
-              <h2>Pastel de Queijo</h2>
-              <p>Quantidade: 12 unidades</p>
-              <span>Retirar até as 18h</span>
-            </div>
-          </div>
-
-          <div class="comidas-item">
-            <div class="comidas-info">
-              <img src="./assets/img/paoqueijo.jpg" alt="Pão de Queijo" class="comidas-foto">
-              <h2>Pão de Queijo</h2>
-              <p>Quantidade: 15 unidades</p>
-              <span>Retirar até as 17h</span>
-            </div>
-          </div>
-
-          <div class="comidas-item">
-            <div class="comidas-info">
-              <img src="./assets/img/esfihacarne.avif" alt="Esfiha de Carne" class="comidas-foto">
-              <h2>Esfiha de Carne</h2>
-              <p>Quantidade: 20 unidades</p>
-              <span>Retirar em até 3 horas</span>
-            </div>
-          </div>
-
-          <div class="comidas-item">
-            <div class="comidas-info">
-              <img src="./assets/img/cenoura.jfif" alt="Bolo de Cenoura" class="comidas-foto">
-              <h2>Bolo de Cenoura</h2>
-              <p>Quantidade: 1 bolo</p>
-              <span>Retirar até as 19h</span>
-            </div>
-          </div>
-
-          <div class="comidas-item">
-            <div class="comidas-info">
-              <img src="./assets/img/torta.webp" alt="Torta de Frango" class="comidas-foto">
-              <h2>Torta de Frango</h2>
-              <p>Quantidade: 5 fatias</p>
-              <span>Retirar até as 16h</span>
-            </div>
-          </div>
-
-          <div class="comidas-item">
-            <div class="comidas-info">
-              <img src="./assets/img/croi.jpg" alt="Croissant" class="comidas-foto">
-              <h2>Croissant</h2>
-              <p>Quantidade: 6 unidades</p>
-              <span>Retirar em até 1 hora</span>
-            </div>
-          </div>
-
-          <div class="comidas-item">
-            <div class="comidas-info">
-              <img src="./assets/img/quiche.avif" alt="Quiche de Alho-poró" class="comidas-foto">
-              <h2>Quiche de Alho-poró</h2>
-              <p>Quantidade: 4 fatias</p>
-              <span>Retirar até as 20h</span>
-            </div>
-          </div>
-
+        <div class="caixa-busca">
+          <input
+            type="text"
+            id="campoBusca"
+            placeholder="Buscar oferta..."
+            class="pesquisa"
+          />
         </div>
 
-        <button id="btnAvancar" class="btn-carrossel">&#10095;</button>
-      </div>
+        <a href="#guias">Início</a>
+        <a href="#Sobre">Sobre</a>
+        <a href="html/ofertas.html">Ofertas</a>
+        <a href="html/cadastro.html">Doar</a>
+        <a href="html/sobreprojeto.html">Sobre o Projeto</a>
 
-      <section class="hero">
-        <div>
-          <h2>COMIDA BOA NÃO PRECISA IR PARA O LIXO!</h2>
-          <p>O Reaproveita conecta padarias, mercados e restaurantes que têm excedente de alimentos a pessoas e
-            instituições que precisam deles. Simples, rápido e gratuito.</p>
-          <div class="acoes">
-            <a class="btn btn-laranja" href="html/ofertas.html">Ver doações</a>
-            <a class="btn btn-claro" href="html/cadastro.html">Quero doar</a>
+        <button id="btnTema" class="btn-tema">
+          <img
+            id="iconeTema"
+            src="./assets/icons/lua.svg"
+            alt="Alternar Tema"
+            class="img-tema"
+          />
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="guias" class="secao">
+        <div class="formacao-card">
+          <div class="formacao-info">
+            <a href="html/ofertas.html">
+              <h3>Alimentos que transformam vidas</h3>
+              <p>
+                Conectamos quem tem alimento sobrando a quem precisa receber.
+              </p>
+              <div class="cardin">
+                <p>Ver ofertas</p>
+              </div>
+            </a>
           </div>
         </div>
-        <div class="hero-numeros">
-          <div class="numero"><strong id="numDisponiveis">43</strong><span>unidades disponíveis agora</span></div>
-          <div class="numero"><strong id="numSalvas">57</strong><span>unidades já reservadas</span></div>
-          <div class="numero"><strong id="numLocais">100</strong><span>estabelecimentos parceiros</span></div>
+        <h1>Ofertas Recentes</h1>
+
+        <div class="carrossel-container">
+          <button id="btnVoltar" class="btn-carrossel">&#10094;</button>
+
+          <div class="cardOfertas" id="sliderOfertas">
+            <div class="comidas-item">
+              <div class="comidas-info">
+                <img
+                  src="./assets/img/360_F_105630896_juHF5aD5RMDinjacDCPWgnbR1yLCgklG.webp"
+                  alt="Enroladinho de Presunto e Queijo"
+                  class="comidas-foto"
+                />
+                <h2>Enroladinho de Presunto e Queijo</h2>
+                <p>Quantidade: 10 unidades</p>
+                <span>Retirar até as 18h</span>
+              </div>
+            </div>
+
+            <div class="comidas-item">
+              <div class="comidas-info">
+                <img
+                  src="./assets/img/images.jfif"
+                  alt="Coxinha"
+                  class="comidas-foto"
+                />
+                <h2>Coxinha</h2>
+                <p>Quantidade: 8 unidades</p>
+                <span>Retirar em até 2 horas</span>
+              </div>
+            </div>
+
+            <div class="comidas-item">
+              <div class="comidas-info">
+                <img
+                  src="./assets/img/Vvvl530dn0NRUcRizcvdFp7LNiB96g0C30eIQgoT.jpg"
+                  alt="Pastel de Queijo"
+                  class="comidas-foto"
+                />
+                <h2>Pastel de Queijo</h2>
+                <p>Quantidade: 12 unidades</p>
+                <span>Retirar até as 18h</span>
+              </div>
+            </div>
+
+            <div class="comidas-item">
+              <div class="comidas-info">
+                <img
+                  src="./assets/img/paoqueijo.jpg"
+                  alt="Pão de Queijo"
+                  class="comidas-foto"
+                />
+                <h2>Pão de Queijo</h2>
+                <p>Quantidade: 15 unidades</p>
+                <span>Retirar até as 17h</span>
+              </div>
+            </div>
+
+            <div class="comidas-item">
+              <div class="comidas-info">
+                <img
+                  src="./assets/img/esfihacarne.avif"
+                  alt="Esfiha de Carne"
+                  class="comidas-foto"
+                />
+                <h2>Esfiha de Carne</h2>
+                <p>Quantidade: 20 unidades</p>
+                <span>Retirar em até 3 horas</span>
+              </div>
+            </div>
+
+            <div class="comidas-item">
+              <div class="comidas-info">
+                <img
+                  src="./assets/img/cenoura.jfif"
+                  alt="Bolo de Cenoura"
+                  class="comidas-foto"
+                />
+                <h2>Bolo de Cenoura</h2>
+                <p>Quantidade: 1 bolo</p>
+                <span>Retirar até as 19h</span>
+              </div>
+            </div>
+
+            <div class="comidas-item">
+              <div class="comidas-info">
+                <img
+                  src="./assets/img/torta.webp"
+                  alt="Torta de Frango"
+                  class="comidas-foto"
+                />
+                <h2>Torta de Frango</h2>
+                <p>Quantidade: 5 fatias</p>
+                <span>Retirar até as 16h</span>
+              </div>
+            </div>
+
+            <div class="comidas-item">
+              <div class="comidas-info">
+                <img
+                  src="./assets/img/croi.jpg"
+                  alt="Croissant"
+                  class="comidas-foto"
+                />
+                <h2>Croissant</h2>
+                <p>Quantidade: 6 unidades</p>
+                <span>Retirar em até 1 hora</span>
+              </div>
+            </div>
+
+            <div class="comidas-item">
+              <div class="comidas-info">
+                <img
+                  src="./assets/img/quiche.avif"
+                  alt="Quiche de Alho-poró"
+                  class="comidas-foto"
+                />
+                <h2>Quiche de Alho-poró</h2>
+                <p>Quantidade: 4 fatias</p>
+                <span>Retirar até as 20h</span>
+              </div>
+            </div>
+          </div>
+
+          <button id="btnAvancar" class="btn-carrossel">&#10095;</button>
         </div>
-      </section>
 
-      <section class="funci">
-        <h2>Como funciona</h2>
-        <p class="subtitulo">Do cadastro à retirada em três passos.</p>
-        <div class="grade-3">
-          <div class="caixa"><span class="passo-num">1</span>
-            <h3>O estabelecimento publica</h3>
-            <p>Informa o alimento, a quantidade, a validade e o horário limite para retirada.</p>
+        <section class="hero">
+          <div>
+            <h2>COMIDA BOA NÃO PRECISA IR PARA O LIXO!</h2>
+            <p>
+              O Reaproveita conecta padarias, mercados e restaurantes que têm
+              excedente de alimentos a pessoas e instituições que precisam
+              deles. Simples, rápido e gratuito.
+            </p>
+            <div class="acoes">
+              <a class="btn btn-laranja" href="html/ofertas.html"
+                >Ver doações</a
+              >
+              <a class="btn btn-claro" href="html/cadastro.html">Quero doar</a>
+            </div>
           </div>
-          <div class="caixa"><span class="passo-num">2</span>
-            <h3>O interessado reserva</h3>
-            <p>Escolhe a oferta, informa nome e contato e garante a quantidade desejada.</p>
+          <div class="hero-numeros">
+            <div class="numero">
+              <strong id="numDisponiveis">43</strong
+              ><span>unidades disponíveis agora</span>
+            </div>
+            <div class="numero">
+              <strong id="numSalvas">57</strong
+              ><span>unidades já reservadas</span>
+            </div>
+            <div class="numero">
+              <strong id="numLocais">100</strong
+              ><span>estabelecimentos parceiros</span>
+            </div>
           </div>
-          <div class="caixa"><span class="passo-num">3</span>
-            <h3>A retirada acontece</h3>
-            <p>A pessoa retira o alimento no local dentro do prazo e nada é desperdiçado.</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="Sobre" class="sobre">
-        <div class="set">
-          <div class="dell">
-            <h2>Por que isso importa</h2>
-            <p class="subtitulo">O desperdício de alimentos é um problema social, econômico e ambiental.</p>
-          </div>
-
-          <div class="grade-2">
+        <section class="funci">
+          <h2>Como funciona</h2>
+          <p class="subtitulo">Do cadastro à retirada em três passos.</p>
+          <div class="grade-3">
             <div class="caixa">
-              <h3>Social</h3>
-              <p>Enquanto parte da população enfrenta insegurança alimentar, alimentos em perfeito estado são
-                descartados
-                diariamente por comércios.</p>
+              <span class="passo-num">1</span>
+              <h3>O estabelecimento publica</h3>
+              <p>
+                Informa o alimento, a quantidade, a validade e o horário limite
+                para retirada.
+              </p>
             </div>
-
             <div class="caixa">
-              <h3>Ambiental</h3>
-              <p>Alimentos descartados geram resíduos e emissão de gases em aterros. Reaproveitar reduz esse impacto.
+              <span class="passo-num">2</span>
+              <h3>O interessado reserva</h3>
+              <p>
+                Escolhe a oferta, informa nome e contato e garante a quantidade
+                desejada.
+              </p>
+            </div>
+            <div class="caixa">
+              <span class="passo-num">3</span>
+              <h3>A retirada acontece</h3>
+              <p>
+                A pessoa retira o alimento no local dentro do prazo e nada é
+                desperdiçado.
               </p>
             </div>
           </div>
-        </div>
+        </section>
+
+        <section id="Sobre" class="sobre">
+          <div class="set">
+            <div class="dell">
+              <h2>Por que isso importa</h2>
+              <p class="subtitulo">
+                O desperdício de alimentos é um problema social, econômico e
+                ambiental.
+              </p>
+            </div>
+
+            <div class="grade-2">
+              <div class="caixa">
+                <h3>Social</h3>
+                <p>
+                  Enquanto parte da população enfrenta insegurança alimentar,
+                  alimentos em perfeito estado são descartados diariamente por
+                  comércios.
+                </p>
+              </div>
+
+              <div class="caixa">
+                <h3>Ambiental</h3>
+                <p>
+                  Alimentos descartados geram resíduos e emissão de gases em
+                  aterros. Reaproveitar reduz esse impacto.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
-    </section>
-  </main>
+    </main>
 
-  <footer id="suporte" class="rodape">
-    <p>Facilitamos o acesso ao conhecimento tecnológico, incentivando a inovação e o desenvolvimento de habilidades
-      digitais, em alinhamento com a ODS 9.</p>
-    <p>© 2026 Reaproveita | Projeto Integrador Tec em Informática para Internet | Todos os direitos reservados | Senac
-      Largo Treze.</p>
-  </footer>
-  <script src="javascript/script.js"></script>
-</body>
-
+    <footer id="suporte" class="rodape">
+      <p>
+        Facilitamos o acesso ao conhecimento tecnológico, incentivando a
+        inovação e o desenvolvimento de habilidades digitais, em alinhamento com
+        a ODS 9.
+      </p>
+      <p>
+        &copy; 2026 Reaproveita | Projeto Integrador Tec em Informática para
+        Internet | Todos os direitos reservados | Senac Largo Treze.
+      </p>
+    </footer>
+    <script src="./javascript/script.js"></script>
+  </body>
 </html>

@@ -1,22 +1,29 @@
-const carrossel = document.getElementById('sliderOfertas');
-const btnVoltar = document.getElementById('btnVoltar');
-const btnAvancar = document.getElementById('btnAvancar');
-const btnTema = document.getElementById('btnTema');
-const iconeTema = document.getElementById('iconeTema');
-const campoBusca = document.getElementById('campoBusca');
+document.addEventListener("DOMContentLoaded", (event) => {
+  console.log("HTML fully loaded!");
+});
 
-let arrastando = false, inicioX, scrollInicial, tempo;
+const carrossel = document.getElementById("sliderOfertas");
+const btnVoltar = document.getElementById("btnVoltar");
+const btnAvancar = document.getElementById("btnAvancar");
+const btnTema = document.getElementById("btnTema");
+const iconeTema = document.getElementById("iconeTema");
+const campoBusca = document.getElementById("campoBusca");
+
+let arrastando = false,
+  inicioX,
+  scrollInicial,
+  tempo;
 
 function mover(distancia) {
   if (!carrossel) return;
   const fim = carrossel.scrollWidth - carrossel.clientWidth;
 
   if (distancia > 0 && carrossel.scrollLeft >= fim - 10) {
-    carrossel.scrollTo({ left: 0, behavior: 'smooth' });
+    carrossel.scrollTo({ left: 0, behavior: "smooth" });
   } else if (distancia < 0 && carrossel.scrollLeft === 0) {
-    carrossel.scrollTo({ left: carrossel.scrollWidth, behavior: 'smooth' });
+    carrossel.scrollTo({ left: carrossel.scrollWidth, behavior: "smooth" });
   } else {
-    carrossel.scrollBy({ left: distancia, behavior: 'smooth' });
+    carrossel.scrollBy({ left: distancia, behavior: "smooth" });
   }
   reiniciarTempo();
 }
@@ -30,72 +37,73 @@ function reiniciarTempo() {
 function pararArrasto() {
   if (!carrossel) return;
   arrastando = false;
-  carrossel.classList.remove('arrastando');
+  carrossel.classList.remove("arrastando");
   reiniciarTempo();
 }
 
 if (carrossel) {
-  if (btnAvancar) btnAvancar.addEventListener('click', () => mover(carrossel.clientWidth));
-  if (btnVoltar) btnVoltar.addEventListener('click', () => mover(-carrossel.clientWidth));
+  if (btnAvancar)
+    btnAvancar.addEventListener("click", () => mover(carrossel.clientWidth));
+  if (btnVoltar)
+    btnVoltar.addEventListener("click", () => mover(-carrossel.clientWidth));
 
-  carrossel.addEventListener('mousedown', (e) => {
+  carrossel.addEventListener("mousedown", (e) => {
     arrastando = true;
-    carrossel.classList.add('arrastando');
+    carrossel.classList.add("arrastando");
     inicioX = e.pageX - carrossel.offsetLeft;
     scrollInicial = carrossel.scrollLeft;
     clearInterval(tempo);
   });
 
-  carrossel.addEventListener('mousemove', (e) => {
+  carrossel.addEventListener("mousemove", (e) => {
     if (!arrastando) return;
     e.preventDefault();
     const movimento = (e.pageX - carrossel.offsetLeft - inicioX) * 2;
     carrossel.scrollLeft = scrollInicial - movimento;
   });
 
-  carrossel.addEventListener('mouseup', pararArrasto);
-  carrossel.addEventListener('mouseleave', pararArrasto);
-  carrossel.addEventListener('touchstart', () => clearInterval(tempo));
-  carrossel.addEventListener('touchend', reiniciarTempo);
+  carrossel.addEventListener("mouseup", pararArrasto);
+  carrossel.addEventListener("mouseleave", pararArrasto);
+  carrossel.addEventListener("touchstart", () => clearInterval(tempo));
+  carrossel.addEventListener("touchend", reiniciarTempo);
 
   reiniciarTempo();
 }
 
+// Essa bomba aqui q não funciona né?
 function trocarImagemTema(escuro) {
-  if (!iconeTema) return;
-  const src = iconeTema.getAttribute('src') || '';
-  const pasta = src.startsWith('./') ? '../assets/icons/' : 'assets/icons';
-  iconeTema.src = pasta + '/' + (escuro ? 'sol.svg' : 'lua.svg');
+  if (escuro) iconeTema.src = "./assets/icons/sol.svg";
+  else iconeTema.src = "./assets/icons/lua.svg";
 }
 
 if (btnTema) {
-  const temaSalvo = localStorage.getItem('tema') === 'escuro';
+  const temaSalvo = localStorage.getItem("tema") === "escuro";
   if (temaSalvo) {
-    document.body.classList.add('modo-escuro');
+    document.body.classList.add("modo-escuro");
   }
   trocarImagemTema(temaSalvo);
 
-  btnTema.addEventListener('click', () => {
-    const escuro = document.body.classList.toggle('modo-escuro');
-    localStorage.setItem('tema', escuro ? 'escuro' : 'claro');
+  btnTema.addEventListener("click", () => {
+    const escuro = document.body.classList.toggle("modo-escuro");
+    localStorage.setItem("tema", escuro ? "escuro" : "claro");
     trocarImagemTema(escuro);
   });
 }
 
 if (campoBusca) {
-  campoBusca.addEventListener('input', () => {
+  campoBusca.addEventListener("input", () => {
     const termo = campoBusca.value.toLowerCase();
-    document.querySelectorAll('.comidas-item').forEach((card) => {
+    document.querySelectorAll(".comidas-item").forEach((card) => {
       const achou = card.textContent.toLowerCase().includes(termo);
-      card.style.display = achou ? '' : 'none';
+      card.style.display = achou ? "" : "none";
     });
   });
 }
 
 const caminho = window.location.pathname;
-document.querySelectorAll('.menu a').forEach((link) => {
-  const href = link.getAttribute('href');
-  if (href && href !== '#' && href !== '#inicio' && caminho.includes(href)) {
-    link.classList.add('ativo');
+document.querySelectorAll(".menu a").forEach((link) => {
+  const href = link.getAttribute("href");
+  if (href && href !== "#" && href !== "#inicio" && caminho.includes(href)) {
+    link.classList.add("ativo");
   }
 });

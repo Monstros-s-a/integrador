@@ -1,39 +1,38 @@
-
 @font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-Italic.ttf') format('truetype');
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-Bold.ttf') format('truetype');
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-BoldItalic.ttf') format('truetype');
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Pacifico';
-  src: url('../assets/fonts/Pacifico.ttf') format('truetype');
+  font-family: "Pacifico";
+  src: url("../assets/fonts/Pacifico.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -79,10 +78,12 @@ body {
   margin: 0;
   background: var(--fundo);
   color: var(--texto);
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.6;
-  transition: background 200ms ease, color 200ms ease;
+  transition:
+    background 200ms ease,
+    color 200ms ease;
 }
 
 main {
@@ -97,7 +98,9 @@ main {
   width: 100%;
   background: var(--branco);
   border-bottom: 1px solid var(--borda);
-  transition: background 200ms ease, border-color 200ms ease;
+  transition:
+    background 200ms ease,
+    border-color 200ms ease;
 }
 
 .menu {
@@ -135,7 +138,7 @@ main {
 }
 
 .menu a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 12px;
@@ -168,7 +171,10 @@ main {
   color: var(--texto);
   font-size: 12px;
   outline: none;
-  transition: border-color 160ms ease, background 200ms ease, color 200ms ease;
+  transition:
+    border-color 160ms ease,
+    background 200ms ease,
+    color 200ms ease;
 }
 
 .pesquisa:focus,
@@ -188,7 +194,9 @@ main {
   border-radius: 50%;
   background: var(--verde-claro);
   cursor: pointer;
-  transition: background 160ms ease, border-color 160ms ease;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
 }
 
 .img-tema {
@@ -237,7 +245,8 @@ main {
     width: 100%;
   }
 
-  .pesquisa, .input-busca {
+  .pesquisa,
+  .input-busca {
     width: 100%;
   }
 
@@ -251,45 +260,45 @@ main {
   }
 }
 
-  .container-ofertas {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+.container-ofertas {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
 
-  .filtro-lateral {
-    position: static;
-    width: 100%;
-  }
+.filtro-lateral {
+  position: static;
+  width: 100%;
+}
 
-  .secao-comidas {
-    grid-template-columns: 1fr;
-  }
+.secao-comidas {
+  grid-template-columns: 1fr;
+}
 
-  .grade-2,
-  .grade-3,
-  .funci .grade-3,
-  .sobre .grade-2 {
-    flex-direction: column;
-    grid-template-columns: 1fr;
-  }
+.grade-2,
+.grade-3,
+.funci .grade-3,
+.sobre .grade-2 {
+  flex-direction: column;
+  grid-template-columns: 1fr;
+}
 
-  .comidas-item {
-    flex: 0 0 85%;
-  }
+.comidas-item {
+  flex: 0 0 85%;
+}
 
-  .hero {
-    flex-direction: column;
-    padding: 24px;
-    gap: 24px;
-  }
+.hero {
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+}
 
-  .hero h2 {
-    font-size: 26px;
-  }
+.hero h2 {
+  font-size: 26px;
+}
 
-  .hero-numeros {
-    width: 100%;
-  }
+.hero-numeros {
+  width: 100%;
+}
 
 @media (max-width: 480px) {
   .menu a {
