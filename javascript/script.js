@@ -8,6 +8,7 @@ const btnAvancar = document.getElementById("btnAvancar");
 const btnTema = document.getElementById("btnTema");
 const iconeTema = document.getElementById("iconeTema");
 const campoBusca = document.getElementById("campoBusca");
+const resultadosBusca = document.getElementById("resultadosBusca");
 
 let arrastando = false,
   inicioX,
@@ -90,13 +91,64 @@ if (btnTema) {
   });
 }
 
-if (campoBusca) {
-  campoBusca.addEventListener("input", () => {
-    const termo = campoBusca.value.toLowerCase();
-    document.querySelectorAll(".comidas-item").forEach((card) => {
-      const achou = card.textContent.toLowerCase().includes(termo);
-      card.style.display = achou ? "" : "none";
+function formatarTexto(texto) {
+  return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "").toLowerCase();
+}
+
+if (campoBusca && resultadosBusca) {
+  const itensComida = document.querySelectorAll(".comidas-item");
+
+  campoBusca.addEventListener("input", (e) => {
+    const termo = formatarTexto(e.target.value);
+    resultadosBusca.innerHTML = "";
+
+    if (termo.length === 0) {
+      resultadosBusca.classList.remove("ativo");
+      itensComida.forEach(card => card.style.display = "");
+      return;
+    }
+
+    let encontrou = false;
+
+    itensComida.forEach((card) => {
+      const tituloElemento = card.querySelector("h2");
+      if (!tituloElemento) return;
+      
+      const titulo = tituloElemento.textContent;
+      const tituloFormatado = formatarTexto(titulo);
+
+      if (tituloFormatado.includes(termo)) {
+        encontrou = true;
+        const opcao = document.createElement("div");
+        opcao.className = "item-busca";
+        opcao.textContent = titulo;
+
+        opcao.addEventListener("click", () => {
+          campoBusca.value = titulo;
+          resultadosBusca.classList.remove("ativo");
+          
+          itensComida.forEach(c => {
+            c.style.display = c === card ? "" : "none";
+          });
+          
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+
+        resultadosBusca.appendChild(opcao);
+      }
     });
+
+    if (encontrou) {
+      resultadosBusca.classList.add("ativo");
+    } else {
+      resultadosBusca.classList.remove("ativo");
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!campoBusca.contains(e.target) && !resultadosBusca.contains(e.target)) {
+      resultadosBusca.classList.remove("ativo");
+    }
   });
 }
 
@@ -106,4 +158,8 @@ document.querySelectorAll(".menu a").forEach((link) => {
   if (href && href !== "#" && href !== "#inicio" && caminho.includes(href)) {
     link.classList.add("ativo");
   }
+});
+
+document.getElementById('btnMenu').addEventListener('click', function() {
+  document.getElementById('linksMenu').classList.toggle('ativo');
 });

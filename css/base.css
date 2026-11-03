@@ -81,9 +81,7 @@ body {
   font-family: "Poppins", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.6;
-  transition:
-    background 200ms ease,
-    color 200ms ease;
+  transition: background 200ms ease, color 200ms ease;
 }
 
 button,
@@ -103,9 +101,7 @@ main {
   width: 100%;
   background: var(--branco);
   border-bottom: 1px solid var(--borda);
-  transition:
-    background 200ms ease,
-    border-color 200ms ease;
+  transition: background 200ms ease, border-color 200ms ease;
 }
 
 .menu {
@@ -166,6 +162,46 @@ main {
   display: flex;
   align-items: center;
   margin-left: auto;
+  position: relative;
+}
+
+.resultados-busca {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  margin-top: 8px;
+  max-height: 250px;
+  overflow-y: auto;
+  display: none;
+  z-index: 100;
+}
+
+.resultados-busca.ativo {
+  display: block;
+}
+
+.item-busca {
+  padding: 12px 16px;
+  cursor: pointer;
+  color: var(--texto);
+  font-size: 13px;
+  border-bottom: 1px solid var(--borda);
+  transition: background 150ms ease;
+}
+
+.item-busca:last-child {
+  border-bottom: none;
+}
+
+.item-busca:hover {
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  font-weight: 600;
 }
 
 .pesquisa,
@@ -177,10 +213,7 @@ main {
   color: var(--texto);
   font-size: 12px;
   outline: none;
-  transition:
-    border-color 160ms ease,
-    background 200ms ease,
-    color 200ms ease;
+  transition: border-color 160ms ease, background 200ms ease, color 200ms ease;
 }
 
 .pesquisa:focus,
@@ -200,15 +233,34 @@ main {
   border-radius: 50%;
   background: var(--verde-claro);
   cursor: pointer;
-  transition:
-    background 160ms ease,
-    border-color 160ms ease;
+  transition: background 160ms ease, border-color 160ms ease;
 }
 
 .img-tema {
   width: 16px;
   height: 16px;
   object-fit: contain;
+}
+
+.linksMenu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.controlesMobile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btnMenu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--texto);
+  cursor: pointer;
 }
 
 .rodape {
@@ -233,7 +285,7 @@ main {
 
   .menu {
     justify-content: space-between;
-    padding: 12px 0;
+    padding: 16px 0;
     gap: 12px;
   }
 
@@ -241,14 +293,24 @@ main {
     margin: 0;
   }
 
-  .btn-tema {
+  .controlesMobile {
     order: 2;
-    margin-left: auto;
+  }
+
+  .btnMenu {
+    display: block;
+    order: 2;
+  }
+
+  .btn-tema {
+    order: 1;
+    margin-left: 0;
   }
 
   .caixa-busca {
     order: 3;
     width: 100%;
+    margin-top: 16px;
   }
 
   .pesquisa,
@@ -256,70 +318,78 @@ main {
     width: 100%;
   }
 
-  .menu a {
+  .linksMenu {
     order: 4;
-    flex: 1 1 30%;
-    text-align: center;
-    padding: 8px 0;
-    font-size: 13px;
-    margin: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    margin-top: 12px;
+    gap: 0;
   }
-}
 
-.container-ofertas {
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
+  .linksMenu.ativo {
+    display: flex !important;
+  }
 
-.filtro-lateral {
-  position: static;
-  width: 100%;
-}
+  .linksMenu a {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    margin: 0;
+    border-top: 1px solid var(--borda);
+    font-size: 13px;
+  }
 
-.secao-comidas {
-  grid-template-columns: 1fr;
-}
+  .container-ofertas {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
-.grade-2,
-.grade-3,
-.funci .grade-3,
-.sobre .grade-2 {
-  flex-direction: column;
-  grid-template-columns: 1fr;
-}
+  .filtro-lateral {
+    position: static;
+    width: 100%;
+  }
 
-.comidas-item {
-  flex: 0 0 85%;
-}
+  .secao-comidas {
+    grid-template-columns: 1fr;
+  }
 
-.hero {
-  flex-direction: column;
-  padding: 24px;
-  gap: 24px;
-}
+  .grade-2,
+  .grade-3,
+  .funci .grade-3,
+  .sobre .grade-2 {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
 
-.hero h2 {
-  font-size: 26px;
-  font-family: 'Pacifico.ttf';
-}
+  .comidas-item {
+    flex: 0 0 85%;
+  }
 
-.hero-numeros {
-  width: 100%;
+  .hero {
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+    font-family: "Pacifico", cursive;
+  }
+
+  .hero-numeros {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
-  .menu a {
+  .linksMenu a {
     font-size: 12px;
-    padding: 8px 0;
+    padding: 12px 0;
+    gap: 0;
   }
 
   .comidas-item {
     flex: 0 0 100%;
   }
 }
-  
-
-  .comidas-item {
-    flex: 0 0 100%;
-  }
-
