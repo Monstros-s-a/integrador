@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Poppins";
   src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 00;
   font-style: normal;
   font-display: swap;
 }
@@ -33,6 +33,14 @@
 @font-face {
   font-family: "Pacifico";
   src: url("../assets/fonts/Pacifico.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lobster";
+  src: url("../assets/fonts/Lobster-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -118,10 +126,15 @@ main {
 .menu h1 {
   margin: 0 auto 0 12px;
   color: var(--verde-escuro);
-  font-family: "Pacifico", "Poppins", cursive;
+  font-family: "Pacifico", cursive;
   font-size: 26px;
   font-weight: 400;
   letter-spacing: 0;
+}
+
+.menu h3 {
+
+  font-family:"Lobster" ;
 }
 
 .menu a {
@@ -505,7 +518,6 @@ main {
 
   .hero h2 {
     font-size: 26px;
-    font-family: "Pacifico", cursive;
   }
 
   .hero-numeros {
