@@ -10,28 +10,38 @@
   <body>
     <header class="cima">
       <nav class="menu">
-  <h1>Reaproveita</h1>
+        <h1>Reaproveita</h1>
 
-  <div class="caixa-busca">
-  <input type="text" id="campoBusca" placeholder="Buscar oferta..." class="pesquisa">
-  <div id="resultadosBusca" class="resultados-busca"></div>
-</div>
+        <div class="caixa-busca">
+          <input
+            type="text"
+            id="campoBusca"
+            placeholder="Buscar oferta..."
+            class="pesquisa"
+          />
+          <div id="resultadosBusca" class="resultados-busca"></div>
+        </div>
 
-  <div class="linksMenu" id="linksMenu">
-    <a href="#guias">Início</a>
-    <a href="#Sobre">Sobre</a>
-    <a href="html/ofertas.html">Ofertas</a>
-    <a href="html/cadastro.html">Doar</a>
-    <a href="html/sobreprojeto.html">Sobre o Projeto</a>
-  </div>
+        <div class="linksMenu" id="linksMenu">
+          <a href="#guias">Início</a>
+          <a href="#Sobre">Sobre</a>
+          <a href="html/ofertas.html">Ofertas</a>
+          <a href="html/cadastro.html">Doar</a>
+          <a href="html/sobreprojeto.html">Sobre o Projeto</a>
+        </div>
 
-  <div class="controlesMobile">
-    <button id="btnTema" class="btn-tema">
-      <img id="iconeTema" src="./assets/icons/lua.svg" alt="Alternar Tema" class="img-tema">
-    </button>
-    <button id="btnMenu" class="btnMenu">&#9776;</button>
-  </div>
-</nav>
+        <div class="controlesMobile">
+          <button id="btnTema" class="btn-tema">
+            <img
+              id="iconeTema"
+              src="./assets/icons/lua.svg"
+              alt="Alternar Tema"
+              class="img-tema"
+            />
+          </button>
+          <button id="btnMenu" class="btnMenu">&#9776;</button>
+        </div>
+      </nav>
     </header>
 
     <main>
@@ -282,6 +292,29 @@
         Internet | Todos os direitos reservados | Senac Largo Treze.
       </p>
     </footer>
+    <div id="modalReserva" class="modal-overlay">
+      <div class="modal-box">
+        <button id="fecharModal" class="btn-fechar">&times;</button>
+        <div class="modal-conteudo">
+          <img id="modalImg" src="" alt="Produto" class="modal-img" />
+          <div class="modal-info">
+            <h2 id="modalTitulo">Nome do Produto</h2>
+            <p id="modalDesc">Descrição...</p>
+            <form class="form-reserva">
+              <input type="text" placeholder="Seu Nome" required />
+              <input type="tel" placeholder="Seu WhatsApp" required />
+              <button
+                type="button"
+                class="btn btn-laranja w-100"
+                id="btnConfirmarReserva"
+              >
+                Confirmar Reserva
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./javascript/script.js"></script>
   </body>
 </html>

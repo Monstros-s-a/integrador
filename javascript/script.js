@@ -9,6 +9,9 @@ const btnTema = document.getElementById("btnTema");
 const iconeTema = document.getElementById("iconeTema");
 const campoBusca = document.getElementById("campoBusca");
 const resultadosBusca = document.getElementById("resultadosBusca");
+const modal = document.getElementById("modalReserva");
+const fecharModal = document.getElementById("fecharModal");
+const btnConfirmar = document.getElementById("btnConfirmarReserva");
 
 let arrastando = false,
   inicioX,
@@ -113,7 +116,7 @@ if (campoBusca && resultadosBusca) {
     itensComida.forEach((card) => {
       const tituloElemento = card.querySelector("h2");
       if (!tituloElemento) return;
-      
+
       const titulo = tituloElemento.textContent;
       const tituloFormatado = formatarTexto(titulo);
 
@@ -126,11 +129,11 @@ if (campoBusca && resultadosBusca) {
         opcao.addEventListener("click", () => {
           campoBusca.value = titulo;
           resultadosBusca.classList.remove("ativo");
-          
+
           itensComida.forEach(c => {
             c.style.display = c === card ? "" : "none";
           });
-          
+
           card.scrollIntoView({ behavior: "smooth", block: "center" });
         });
 
@@ -160,6 +163,40 @@ document.querySelectorAll(".menu a").forEach((link) => {
   }
 });
 
-document.getElementById('btnMenu').addEventListener('click', function() {
+document.getElementById('btnMenu').addEventListener('click', function () {
   document.getElementById('linksMenu').classList.toggle('ativo');
 });
+
+if (modal) {
+    document.querySelectorAll(".comidas-item").forEach(card => {
+      card.style.cursor = "pointer";
+      
+      card.addEventListener("click", () => {
+        const titulo = card.querySelector("h2").textContent;
+        const img = card.querySelector("img").src;
+        const paragrafo = card.querySelector("p");
+        const desc = paragrafo ? paragrafo.textContent : "Retirada no local.";
+
+        document.getElementById("modalTitulo").textContent = titulo;
+        document.getElementById("modalImg").src = img;
+        document.getElementById("modalDesc").textContent = desc;
+
+        modal.classList.add("ativo");
+      });
+    });
+
+    fecharModal.addEventListener("click", () => {
+      modal.classList.remove("ativo");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("ativo");
+      }
+    });
+
+    btnConfirmar.addEventListener("click", () => {
+      alert("Reserva confirmada com sucesso! O estabelecimento foi notificado.");
+      modal.classList.remove("ativo");
+    });
+  }

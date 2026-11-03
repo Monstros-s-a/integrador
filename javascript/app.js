@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const linksMenu = document.getElementById("linksMenu");
   const campoBusca = document.getElementById("campoBusca");
   const resultadosBusca = document.getElementById("resultadosBusca");
+  const modal = document.getElementById("modalReserva");
+  const fecharModal = document.getElementById("fecharModal");
+  const btnConfirmar = document.getElementById("btnConfirmarReserva");
 
-  let arrastando = false,
-    inicioX,
-    scrollInicial,
-    tempo;
+  let arrastando = false, inicioX, scrollInicial, tempo;
 
   function mover(distancia) {
     if (!carrossel) return;
@@ -161,6 +161,40 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!campoBusca.contains(e.target) && !resultadosBusca.contains(e.target)) {
         resultadosBusca.classList.remove("ativo");
       }
+    });
+  }
+
+  if (modal) {
+    document.querySelectorAll(".comidas-item").forEach(card => {
+      card.style.cursor = "pointer";
+      
+      card.addEventListener("click", () => {
+        const titulo = card.querySelector("h2").textContent;
+        const img = card.querySelector("img").src;
+        const paragrafo = card.querySelector("p");
+        const desc = paragrafo ? paragrafo.textContent : "Retirada no local.";
+
+        document.getElementById("modalTitulo").textContent = titulo;
+        document.getElementById("modalImg").src = img;
+        document.getElementById("modalDesc").textContent = desc;
+
+        modal.classList.add("ativo");
+      });
+    });
+
+    fecharModal.addEventListener("click", () => {
+      modal.classList.remove("ativo");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("ativo");
+      }
+    });
+
+    btnConfirmar.addEventListener("click", () => {
+      alert("Reserva confirmada com sucesso! O estabelecimento foi notificado.");
+      modal.classList.remove("ativo");
     });
   }
 });
