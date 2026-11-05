@@ -86,3 +86,22 @@
     outline: 3px solid var(--verde-claro);
     outline-offset: 3px;
 }
+
+.cadastro input.campo-invalido {
+  border-color: #d93838 !important;
+  box-shadow: 0 0 0 3px rgba(217, 56, 56, 0.15) !important;
+}
+
+.msg-erro {
+  color: #d93838;
+  font-size: 12px;
+  margin-top: 6px;
+  display: block;
+  font-weight: 600;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}

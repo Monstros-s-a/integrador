@@ -39,45 +39,45 @@
             <div class="estabelecimento">
                 <h2>Estabelecimento</h2>
                 <div>
-                    <form id="formestabelecimento">
+                    <form id="formCadastro" novalidate>
 
-                        <input type="text" id="nome" required placeholder="Digite o Nome do Estabelecimento">
+                        <input type="text" id="nomeEstabelecimento" required placeholder="Digite o Nome do Estabelecimento">
                 </div>
             </div>
 
             <div class="alimento">
                 <h2>Alimento</h2>
                 <div>
-                    <form id="formalimento">
-                        <input type="text" id="nome" required placeholder="Ex: Pao de forma">
+                    <form id="formCadastro" novalidate>
+                        <input type="text" id="nomeAlimento" required placeholder="Ex: Pao de forma">
                 </div>
             </div>
 
             <div class="quantidade">
                 <h2>Quantidade</h2>
                 <div>
-                    <form id="formquantidade">
-                        <input type="text" id="nome" required placeholder="Ex: 30 unidades">
+                    <form id="formCadastro" novalidate>
+                        <input type="number" min="1" id="quantidadeAlimento" required placeholder="Ex: 30 unidades">
                 </div>
             </div>
 
             <div class="vlaidade">
                 <h2>Validade</h2>
                 <div>
-                    <form id="formvalidade">
-                        <input type="text" id="nome" required placeholder="mm/dd/yyyy">
+                    <form id="formCadastro" novalidate>
+                        <input type="date" id="validadeAlimento" required placeholder="mm/dd/yyyy">
                 </div>
             </div>
 
             <div class="contato">
                 <h2>Contato</h2>
                 <div>
-                    <form id="formcontato">
-                        <input type="text" id="nome" required placeholder="WhatsApp ou e-mail">
+                    <form id="formCadastro" novalidate>
+                        <input type="tel" id="contatoEstabelecimento" required placeholder="WhatsApp (Ex: 11 91234-5678)">
                 </div>
             </div>
 
-            <button class="publicar"> Publicar doação</button>
+            <button type="submit" class="publicar"> Publicar doação</button>
 
         </section>
     </main>
@@ -89,6 +89,7 @@
       Largo Treze.</p>
     </footer>
 
+     <div id="toast" class="toast"></div>
     <script src="../javascript/app.js"></script>
 </body>
 

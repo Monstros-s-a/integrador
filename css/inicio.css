@@ -300,12 +300,10 @@
   font-size: 12px;
 }
 
-.comidas-info span {
+.comidas-info .badge-tempo {
   position: absolute;
   bottom: 0;
   left: 0;
-  color: var(--texto-suave);
-  font-size: 11px;
 }
 
 .funci {
