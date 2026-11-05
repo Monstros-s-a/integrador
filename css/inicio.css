@@ -465,30 +465,6 @@ body.modo-escuro .sobre .caixa {
 }
 
 @media (max-width: 768px) {
-  .menu {
-    gap: 12px;
-    padding: 16px 24px;
-  }
-
-  .btn-tema {
-    order: 2;
-    margin-left: auto;
-  }
-
-  .caixa-busca {
-    order: 3;
-    width: 100%;
-  }
-
-  .menu a {
-    order: 4;
-    flex: 1 1 30%;
-    text-align: center;
-    padding: 8px 0;
-    font-size: 13px;
-    margin: 0;
-  }
-
   .btn-carrossel {
     display: none;
   }

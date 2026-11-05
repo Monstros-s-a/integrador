@@ -103,6 +103,52 @@ main {
   margin: 0 auto;
 }
 
+.logoReaproveita {
+
+  display: flex;
+  align-items: center;
+  
+}
+
+.logoReaproveita img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin-right: -25px;
+}
+
+
+.link-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2 ease;
+  border-bottom: none;
+
+}
+
+.link-logo:hover {
+  opacity: 0.85;
+}
+
+.link-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin-right: -25px;
+
+}
+
+.link-logo h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
 .cima {
   position: sticky;
   z-index: 10;
@@ -154,6 +200,10 @@ main {
 }
 
 .menu a::after {
+  content: none;
+}
+
+.linksMenu a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -482,10 +532,42 @@ body.modo-escuro .badge-urgente {
 }
 
 @media (max-width: 768px) {
+  
   main,
   .menu,
   .container-ofertas {
     width: min(100% - 24px, 1120px);
+  }
+
+  .logoReaproveita {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .logoReaproveita img {
+    margin-right: -15px;
+  }
+  
+  .logoReaproveita h1 {
+  
+    margin: 0;
+    font-size: 26px;
+  }
+
+  .link-logo {
+
+    gap: 8px;
+  }
+
+  .link-logo img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .link-logo h1 {
+
+    font-size: 18px;
   }
 
   .menu {
