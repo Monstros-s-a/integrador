@@ -101,12 +101,12 @@
 .tabela th,
 .tabela td {
     padding: 12px 10px;
-    text-align: left;
+    text-align: center;
 }
 
 .tabela th:last-child,
 .tabela td:last-child {
-    text-align: right;
+    text-align: center;
 }
 
 .tabela th:nth-child(1) {
