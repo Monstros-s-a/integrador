@@ -1,0 +1,107 @@
+@import url('../css/base.css');
+
+.cadastro {
+    max-width: 750px;
+    width: 90%;
+    margin: 45px auto;
+    padding: 30px;
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+    transition: background 200ms, border-color 200ms;
+}
+
+.cadastro>h1 {
+    color: var(--verde-escuro);
+    font-size: 28px;
+    margin-bottom: 28px;
+}
+
+.estabelecimento,
+.alimento,
+.quantidade,
+.vlaidade,
+.contato {
+    margin-bottom: 22px;
+    padding: 18px;
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    transition: background 200ms, border-color 200ms;
+}
+
+.cadastro h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--verde-escuro);
+}
+
+.cadastro input {
+    width: 100%;
+    padding: 13px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--texto);
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 200ms;
+}
+
+.cadastro input:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(57, 134, 83, 0.12);
+}
+
+.cadastro input::placeholder {
+    color: var(--texto-suave);
+}
+
+.publicar {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--verde-escuro);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.publicar:hover {
+    background-color: var(--verde);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(40, 117, 72, 0.25);
+}
+
+.publicar:active {
+    transform: scale(0.98);
+}
+
+.publicar:focus-visible {
+    outline: 3px solid var(--verde-claro);
+    outline-offset: 3px;
+}
+
+.cadastro input.campo-invalido {
+  border-color: #d93838 !important;
+  box-shadow: 0 0 0 3px rgba(217, 56, 56, 0.15) !important;
+}
+
+.msg-erro {
+  color: #d93838;
+  font-size: 12px;
+  margin-top: 6px;
+  display: block;
+  font-weight: 600;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
